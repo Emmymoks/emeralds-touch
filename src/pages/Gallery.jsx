@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const IMAGES = {
   Soft: [
-    'https://ik.imagekit.io/emmycloud/image%20(7).jpg?updatedAt=1760363051313',
+    'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_8174_iu7ynv.jpg',
     'https://ik.imagekit.io/emmycloud/image%20(8).jpg?updatedAt=1760363051310',
     'https://ik.imagekit.io/emmycloud/IMG_8186.JPG?updatedAt=1760361485015'
   ],
@@ -12,22 +12,22 @@ const IMAGES = {
     'https://ik.imagekit.io/emmycloud/14.16.33_0bd6c221.jpg?updatedAt=1760361484058'
   ],
   Bridal: [
-    'https://ik.imagekit.io/emmycloud/image.jpg?updatedAt=1760362786192',
+    'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_9398_qumdnj.jpg',
     'https://ik.imagekit.io/emmycloud/image%20(3).jpg?updatedAt=1760362786042',
-    'https://ik.imagekit.io/emmycloud/image%20(2).jpg?updatedAt=1760362786149'
+    'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_9400_a750p1.jpg'
   ]
 };
 
 const VIDEOS = {
   Soft: [
-    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_6428_yzlrmp.mp4',
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9386_bzgxhb.mp4',
     'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9182_tv9wom.mp4',
-    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_6426_hbrxc5.mp4'
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9390_dbrl0l.mp4'
   ],
   Classic: [
     'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_6429_rc3vxr.mp4',
-    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_6426_mebhso.mp4',
-    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_6428_avlvu7.mp4'
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_8233_xsitdm.mov',
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9385_jf6mhg.mp4'
   ],
   Bridal: [
     'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9181_zzoiyl.mp4',
