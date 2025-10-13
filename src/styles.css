@@ -240,6 +240,16 @@ html,body,#root{height:100%;margin:0;background:linear-gradient(180deg,#061021 0
 .pulse{animation:pulse 2s infinite}
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)}}
 
+/* --- Button Hover Animation --- */
+.animated-btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.animated-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.25);
+}
+
 /* reviews */
 .reviews{display:flex;flex-direction:column;gap:10px}
 .review{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:12px;border-radius:10px;border:1px solid var(--glass-border)}  
