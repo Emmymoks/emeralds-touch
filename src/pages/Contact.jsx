@@ -28,18 +28,11 @@ Enquiry: ${form.enquiry || "[Message]"}.`;
   }
 
   return (
-    <section>
+    <section className="contact-section">
       <h2>Contact</h2>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 420px",
-          gap: 18,
-          marginTop: 12,
-        }}
-      >
-        {/* Contact Form */}
-        <div>
+      <div className="contact-grid">
+        {/* Left: Contact Form + Socials */}
+        <div className="contact-left">
           <form className="form" onSubmit={sendWhatsApp}>
             <input
               className="input"
@@ -76,7 +69,8 @@ Enquiry: ${form.enquiry || "[Message]"}.`;
               value={form.enquiry}
               onChange={(e) => update("enquiry", e.target.value)}
             ></textarea>
-            <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+
+            <div className="contact-actions">
               <button className="btn" type="submit">
                 Send to WhatsApp
               </button>
@@ -86,18 +80,9 @@ Enquiry: ${form.enquiry || "[Message]"}.`;
             </div>
           </form>
 
-          {/* Social Links with Icons */}
-          <div style={{ marginTop: 18 }} className="card">
+          <div className="card contact-socials">
             <h4>Connect</h4>
-            <div
-              className="socials"
-              style={{
-                marginTop: 8,
-                display: "flex",
-                gap: 14,
-                alignItems: "center",
-              }}
-            >
+            <div className="socials">
               <a
                 className="link"
                 href="https://wa.me/2349060758511"
@@ -129,22 +114,14 @@ Enquiry: ${form.enquiry || "[Message]"}.`;
           </div>
         </div>
 
-        {/* Studio Locations */}
-        <div>
+        {/* Right: Studio Map */}
+        <div className="contact-right">
           <div className="card">
             <h4>Studio locations</h4>
-            <div style={{ color: "var(--muted)" }}>
+            <p style={{ color: "var(--muted)", marginBottom: 10 }}>
               Lagos State & Kwara State
-            </div>
-            <div style={{ height: 14 }} />
-            <div
-              style={{
-                width: "100%",
-                height: 300,
-                overflow: "hidden",
-                borderRadius: 10,
-              }}
-            >
+            </p>
+            <div className="map-container">
               <iframe
                 title="map"
                 width="100%"
