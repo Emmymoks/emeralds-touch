@@ -30,7 +30,7 @@ export default function Home() {
           <div className="hero-media-card">
             <video
               className="hero-media"
-              src="../IMG_6428.MP4"
+              src="IMG_6428.MP4"
               autoPlay
               muted
               loop
