@@ -243,3 +243,85 @@ html,body,#root{height:100%;margin:0;background:linear-gradient(180deg,#061021 0
 /* reviews */
 .reviews{display:flex;flex-direction:column;gap:10px}
 .review{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:12px;border-radius:10px;border:1px solid var(--glass-border)}  
+/* ABOUT PAGE */
+.about-section h2 {
+  margin-bottom: 18px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.about-image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-2);
+}
+
+.about-image {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-text p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* CONTACT PAGE */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.contact-socials {
+  margin-top: 18px;
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 900px) {
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+  }
+
+  .contact-right {
+    order: -1;
+  }
+}
