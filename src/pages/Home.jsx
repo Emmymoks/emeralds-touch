@@ -30,7 +30,7 @@ export default function Home() {
           <div className="hero-media-card">
             <video
               className="hero-media"
-              src="https://ik.imagekit.io/emmycloud/IMG_6428.MP4?updatedAt=1760362498234"
+              src="./IMG_6428.MP4"
               autoPlay
               muted
               loop
