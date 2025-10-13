@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Emerald's Touch | One face, one glam at a time ✨</title>
+    <meta
+      name="description"
+      content="Emerald's Touch — professional makeup artistry bringing beauty and confidence to every face. Glam with elegance, creativity, and class."
+    />
+    <meta name="author" content="Emerald's Touch" />
+    <meta name="theme-color" content="#d16ba5" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Social Sharing -->
+    <meta property="og:title" content="Emerald's Touch" />
+    <meta
+      property="og:description"
+      content="One face, one glam at a time ✨ — professional makeup artistry."
+    />
+    <meta property="og:image" content="/social-preview.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://emeraldstouch.com" />
+
+    <!-- Apple & PWA Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      🌗
+    </button>
+
+    <!-- React App -->
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      const themeToggle = document.getElementById("themeToggle");
+      const root = document.documentElement;
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) root.setAttribute("data-theme", savedTheme);
+
+      // Toggle between themes
+      themeToggle.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme");
+        const next = current === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+      });
+    </script>
+
+    <style>
+      /* Fixed floating toggle button */
+      #themeToggle {
+        position: fixed;
+        bottom: 22px;
+        right: 22px;
+        z-index: 9999;
+      }
+    </style>
+  </body>
+</html>
