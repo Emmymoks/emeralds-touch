@@ -103,20 +103,37 @@ export default function Gallery() {
             {mode === 'Images' ? (
               <img className="thumb-media" src={src} alt={`${category} makeup`} />
             ) : (
-              <video className="thumb-media" src={src} muted playsInline preload="metadata" />
+              <video
+                className="thumb-media"
+                src={src}
+                muted
+                loop
+                autoPlay
+                playsInline
+                preload="auto"
+              />
             )}
           </div>
         ))}
       </div>
 
       {lightbox && (
-        <div className="lightbox" onClick={() => setLightbox(null)} role="dialog" aria-modal="true">
+        <div
+          className="lightbox"
+          onClick={() => setLightbox(null)}
+          role="dialog"
+          aria-modal="true"
+        >
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <div className="lightbox-header">
               <div style={{ fontWeight: 700 }}>
                 {category} • {mode}
               </div>
-              <button className="close-x" aria-label="Close" onClick={() => setLightbox(null)}>
+              <button
+                className="close-x"
+                aria-label="Close"
+                onClick={() => setLightbox(null)}
+              >
                 ✕
               </button>
             </div>
@@ -124,13 +141,19 @@ export default function Gallery() {
             <div className="lightbox-body">
               <div className="lightbox-media-wrapper">
                 {lightbox.type === 'img' ? (
-                  <img className="lightbox-media" src={lightbox.src} alt={`${category} open`} />
+                  <img
+                    className="lightbox-media"
+                    src={lightbox.src}
+                    alt={`${category} open`}
+                  />
                 ) : (
                   <video
                     className="lightbox-media"
                     src={lightbox.src}
                     controls
                     autoPlay
+                    muted
+                    loop
                     playsInline
                     preload="auto"
                   />
