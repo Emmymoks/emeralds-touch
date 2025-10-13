@@ -6,9 +6,9 @@ const sampleImages = [
   'https://ik.imagekit.io/emmycloud/image.jpg?updatedAt=1760362786192'
 ];
 
-export default function Home() {
+export default function Home({ onNavigate }) {
   return (
-    <section>
+    <section style={{ textDecoration: 'none' }}>
       <div className="hero">
         <div className="hero-left">
           <h2>Emerald's Touch</h2>
@@ -19,10 +19,23 @@ export default function Home() {
             transformations, we craft looks that last.
           </p>
 
-          <div className="cta" style={{ marginTop: 16 }}>
-            <a className="btn" href="https://wa.me/2349060758511" target="_blank" rel="noreferrer">
-              Book on WhatsApp
-            </a>
+          {/* Updated CTA buttons with hover animations */}
+          <div className="cta" style={{ marginTop: 16, display: 'flex', gap: 12 }}>
+            <button
+              className="btn animated-btn"
+              onClick={() => onNavigate('gallery')}
+              style={{ textDecoration: 'none' }}
+            >
+              View My Work
+            </button>
+
+            <button
+              className="btn ghost animated-btn"
+              onClick={() => onNavigate('contact')}
+              style={{ textDecoration: 'none' }}
+            >
+              Make a Reservation
+            </button>
           </div>
         </div>
 
