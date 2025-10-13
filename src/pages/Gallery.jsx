@@ -20,19 +20,19 @@ const IMAGES = {
 
 const VIDEOS = {
   Soft: [
-    './IMG_6428.MP4',
-    './IMG_6429.MP4',
-    './IMG_9182.MP4'
+    '/IMG_6428.MP4',
+    '/IMG_6429.MP4',
+    '/IMG_9182.MP4'
   ],
   Classic: [
-    './IMG_6428.MP4',
-    './IMG_6429.MP4',
-    './IMG_9182.MP4'
+    '/IMG_6428.MP4',
+    '/IMG_6429.MP4',
+    '/IMG_9182.MP4'
   ],
   Bridal: [
-    './IMG_6427.MP4',
-    './IMG_9181.MP4',
-    './IMG_9179.MP4'
+    '/IMG_6427.MP4',
+    '/IMG_9181.MP4',
+    '/IMG_9179.MP4'
   ]
 };
 
