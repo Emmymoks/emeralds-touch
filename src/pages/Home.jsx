@@ -1,9 +1,9 @@
 import React from 'react';
 
 const sampleImages = [
-  'https://ik.imagekit.io/emmycloud/image%20(7).jpg?updatedAt=1760363051313',
-  'https://ik.imagekit.io/emmycloud/14.16.33_115d77fe.jpg?updatedAt=1760361484552',
-  'https://ik.imagekit.io/emmycloud/image.jpg?updatedAt=1760362786192'
+  'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_8174_iu7ynv.jpg',
+    'https://ik.imagekit.io/emmycloud/image%20(8).jpg?updatedAt=1760363051310',
+    'https://ik.imagekit.io/emmycloud/IMG_8186.JPG?updatedAt=1760361485015'
 ];
 
 export default function Home({ onNavigate }) {
@@ -43,7 +43,7 @@ export default function Home({ onNavigate }) {
           <div className="hero-media-card">
             <video
               className="hero-media"
-              src="https://res.cloudinary.com/emmys-cloud/video/upload/IMG_6428_yzlrmp.mp4"
+              src="https://res.cloudinary.com/emmys-cloud/video/upload/IMG_6429_rc3vxr.mp4"
               autoPlay
               muted
               loop
