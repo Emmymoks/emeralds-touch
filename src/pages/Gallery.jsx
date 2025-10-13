@@ -19,16 +19,20 @@ const IMAGES = {
 };
 
 const VIDEOS = {
-  Soft: ['https://ik.imagekit.io/emmycloud/IMG_6428.MP4?updatedAt=1760362498234'],
+  Soft: [
+    './IMG_6428.MP4',
+    './IMG_6429.MP4',
+    './IMG_9182.MP4'
+  ],
   Classic: [
-    'https://ik.imagekit.io/emmycloud/IMG_9182.MP4?updatedAt=1760361489170',
-    'https://ik.imagekit.io/emmycloud/IMG_6429.MP4?updatedAt=1760362499449',
-    'https://ik.imagekit.io/emmycloud/IMG_6428.MP4?updatedAt=1760362498234'
+    './IMG_6428.MP4',
+    './IMG_6429.MP4',
+    './IMG_9182.MP4'
   ],
   Bridal: [
-    'https://ik.imagekit.io/emmycloud/IMG_6427.MP4?updatedAt=1760362500286',
-    'https://ik.imagekit.io/emmycloud/IMG_9181.MP4?updatedAt=1760361489674',
-    'https://ik.imagekit.io/emmycloud/IMG_9179.MP4?updatedAt=1760361488523'
+    './IMG_6427.MP4',
+    './IMG_9181.MP4',
+    './IMG_9179.MP4'
   ]
 };
 
