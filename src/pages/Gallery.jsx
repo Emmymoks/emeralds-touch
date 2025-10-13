@@ -31,8 +31,8 @@ const VIDEOS = {
   ],
   Bridal: [
     'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9181_zzoiyl.mp4',
-    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_6427_bsodfy.mp4',
-    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9179_uvpp4l.mp4'
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9179_uvpp4l.mp4',
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_6427_bsodfy.mp4'
   ]
 };
 
