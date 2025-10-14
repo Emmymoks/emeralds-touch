@@ -108,7 +108,7 @@ Enquiry: ${form.enquiry || "[Message]"}.`;
                 rel="noreferrer"
                 title="TikTok"
               >
-                <FaTiktok size={24} color="#fff" />
+                <FaTiktok size={24} color="#000000ff" />
               </a>
             </div>
           </div>
