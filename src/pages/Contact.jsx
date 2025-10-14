@@ -90,7 +90,7 @@ Enquiry: ${form.enquiry || "[Message]"}.`;
                 rel="noreferrer"
                 title="WhatsApp"
               >
-                <FaWhatsapp size={24} color="#25D366" />
+                <FaWhatsapp size={24} />
               </a>
               <a
                 className="link"
@@ -99,7 +99,7 @@ Enquiry: ${form.enquiry || "[Message]"}.`;
                 rel="noreferrer"
                 title="Instagram"
               >
-                <FaInstagram size={24} color="#E1306C" />
+                <FaInstagram size={24} />
               </a>
               <a
                 className="link"
@@ -108,7 +108,7 @@ Enquiry: ${form.enquiry || "[Message]"}.`;
                 rel="noreferrer"
                 title="TikTok"
               >
-                <FaTiktok size={24} color="#000000ff" />
+                <FaTiktok size={24} />
               </a>
             </div>
           </div>
