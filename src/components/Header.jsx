@@ -12,7 +12,7 @@ export default function Header({ onNavigate, route }) {
         <div className="logo">ET</div>
         <div>
           <h1>Emerald's Touch</h1>
-          <div style={{ fontSize: 12, color: "#9aa4b2" }}>
+          <div style={{ fontSize: 12, color: 'var(--muted)' }}>
             one face, one glam at a time ✨
           </div>
         </div>
@@ -33,13 +33,13 @@ export default function Header({ onNavigate, route }) {
         {/* Social Links */}
         <div className="nav-socials">
           <a href="https://wa.me/2349060758511" target="_blank" rel="noreferrer">
-            <FaWhatsapp size={20} color="#25D366" />
+            <FaWhatsapp size={20} />
           </a>
           <a href="https://www.instagram.com/eme.raldstouch?igsh=enUybnQxZjVsZmcx" target="_blank" rel="noreferrer">
-            <FaInstagram size={20} color="#E1306C" />
+            <FaInstagram size={20} />
           </a>
           <a href="https://www.tiktok.com/@emeraldoflagos?_t=ZS-90WAgFJQmLy&_r=1" target="_blank" rel="noreferrer">
-            <FaTiktok size={20} color="#000" />
+            <FaTiktok size={20} />
           </a>
         </div>
       </nav>
@@ -75,13 +75,13 @@ export default function Header({ onNavigate, route }) {
 
             <div className="mobile-socials">
               <a href="https://wa.me/2349060758511" target="_blank" rel="noreferrer">
-                <FaWhatsapp size={22} color="#25D366" />
+                <FaWhatsapp size={22} />
               </a>
               <a href="https://www.instagram.com/eme.raldstouch?igsh=enUybnQxZjVsZmcx" target="_blank" rel="noreferrer">
-                <FaInstagram size={22} color="#E1306C" />
+                <FaInstagram size={22} />
               </a>
               <a href="https://www.tiktok.com/@emeraldoflagos?_t=ZS-90WAgFJQmLy&_r=1" target="_blank" rel="noreferrer">
-                <FaTiktok size={22} color="#000000ff" />
+                <FaTiktok size={22} />
               </a>
             </div>
           </div>
