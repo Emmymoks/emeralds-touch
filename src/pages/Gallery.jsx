@@ -54,8 +54,8 @@ export default function Gallery() {
   }, []);
 
   return (
-    <section>
-      <h2>Gallery</h2>
+    <section className="page">
+      <h2 className="text-reveal"><span>Gallery</span></h2>
 
       <div className="filter-bar" aria-label="Gallery controls">
         <div style={{ display: 'flex', gap: 8 }}>
@@ -103,7 +103,7 @@ export default function Gallery() {
             aria-label={`Open ${mode === 'Images' ? 'image' : 'video'} in ${category}`}
           >
             {mode === 'Images' ? (
-              <img className="thumb-media" src={src} alt={`${category} makeup`} />
+              <img className="thumb-media" src={src} alt={`${category} makeup`} loading="lazy" />
             ) : (
               <video
                 className="thumb-media"
@@ -112,7 +112,7 @@ export default function Gallery() {
                 loop
                 autoPlay
                 playsInline
-                preload="auto"
+                preload="metadata"
               />
             )}
           </div>
