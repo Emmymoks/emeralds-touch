@@ -68,7 +68,7 @@ export default function Home({ onNavigate }) {
           <div className="review">
             <strong>Amaka A.</strong>
             <div style={{ color: 'var(--muted)' }}>
-              Joy transformed me for my wedding — lasted all night and the photos were stunning.
+              Joy transformed me for my wedding. It lasted all day and the photos were stunning.
             </div>
           </div>
           <div className="review">
