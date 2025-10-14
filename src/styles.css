@@ -311,14 +311,15 @@ html[data-theme="dark"] .category-btn.ghost {
   justify-content: center;
   /* Raise above most UI chrome (theme toggle/header) so media is never obscured */
   z-index: 3000;
-  padding: 20px;
+  padding: 12px;
 }
 
 .lightbox-content {
   position: relative;
   /* Constrain content to viewport while leaving space for header/controls */
-  max-width: min(1300px, 96vw);
-  max-height: calc(100vh - 80px);
+  width: min(1200px, 96vw);
+  max-width: 96vw;
+  max-height: 96vh;
   border-radius: 12px;
   overflow: hidden;
   background: var(--card);
@@ -348,8 +349,9 @@ html[data-theme="dark"] .category-btn.ghost {
 
 .lightbox-media-wrapper {
   width: 100%;
-  height: 100%;
+  /* let wrapper grow to fill remaining space between header and footer */
   display: flex;
+  flex: 1 1 auto;
   align-items: center;
   justify-content: center;
   padding: 8px;
@@ -357,8 +359,8 @@ html[data-theme="dark"] .category-btn.ghost {
 
 .lightbox-media {
   /* Ensure media fits inside the lightbox content without cropping. */
-  max-width: min(1200px, 92vw);
-  max-height: calc(100vh - 160px);
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -368,8 +370,8 @@ html[data-theme="dark"] .category-btn.ghost {
 
 /* Mobile adjustments: use most of viewport but keep some breathing room */
 @media(max-width:520px){
-  .lightbox-content{ max-width: 96vw; max-height: calc(100vh - 48px); border-radius:10px }
-  .lightbox-media{ max-width: 94vw; max-height: calc(100vh - 120px) }
+  .lightbox-content{ width: 96vw; max-height: 96vh; border-radius:10px }
+  .lightbox-media{ max-width: 94vw; max-height: calc(96vh - 56px) }
 }
 
 /* Close button */
