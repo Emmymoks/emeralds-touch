@@ -7,7 +7,7 @@ export default function Header({ onNavigate, route }) {
   const labels = { home: "Home", gallery: "Gallery", about: "About", contact: "Contact" };
 
   return (
-    <header className="header" style={{ position: "relative", zIndex: 90 }}>
+  <header className="header">
       <div className="brand">
         <div className="logo">ET</div>
         <div>
