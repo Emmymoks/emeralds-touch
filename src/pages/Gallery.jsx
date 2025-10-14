@@ -79,7 +79,7 @@ export default function Gallery() {
           {['Soft', 'Classic', 'Bridal'].map((c) => (
             <button
               key={c}
-              className={category === c ? 'btn' : 'btn ghost'}
+              className={`${category === c ? 'btn' : 'btn ghost'} category-btn`}
               onClick={() => setCategory(c)}
               aria-pressed={category === c}
             >
