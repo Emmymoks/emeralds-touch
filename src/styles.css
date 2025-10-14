@@ -58,6 +58,26 @@ html,body,#root{height:100%;margin:0;background:var(--bg);color:var(--text)}
 .btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--glass-border)}
 .btn:active{transform:translateY(1px)}
 
+/* Smaller category buttons used on Gallery filter */
+.category-btn{
+  padding:4px 8px;
+  font-size:12px;
+  border-radius:7px;
+  height:30px;
+  min-width:56px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+  transition:transform .14s ease,box-shadow .14s ease;
+}
+.category-btn.ghost{padding:5px 10px}
+
+/* Slightly smaller on very small screens */
+@media(max-width:420px){
+  .category-btn{padding:4px 6px;font-size:11px;height:28px;min-width:48px}
+}
+
 /* cards */
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:22px}
 .card{background:var(--card);padding:14px;border-radius:12px;border:1px solid var(--glass-border);box-shadow:var(--shadow)}
