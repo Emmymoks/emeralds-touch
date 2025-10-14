@@ -28,8 +28,8 @@ Enquiry: ${form.enquiry || "[Message]"}.`;
   }
 
   return (
-    <section className="contact-section">
-      <h2>Contact</h2>
+    <section className="contact-section page">
+      <h2 className="text-reveal"><span>Contact</span></h2>
       <div className="contact-grid">
         {/* Left: Contact Form + Socials */}
         <div className="contact-left">
@@ -129,6 +129,7 @@ Enquiry: ${form.enquiry || "[Message]"}.`;
                 frameBorder="0"
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15872.123456789012!2d3.379205!3d6.524379!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf4b7e1c5c3b1%3A0xabcdef1234567890!2sLagos%20State!5e0!3m2!1sen!2sng!4v1697040000000"
                 allowFullScreen
+                loading="lazy"
               />
             </div>
           </div>
