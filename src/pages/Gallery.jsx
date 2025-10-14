@@ -53,6 +53,15 @@ export default function Gallery() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  // lock body scroll when lightbox is open
+  useEffect(() => {
+    if (lightbox) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => { document.body.style.overflow = prev };
+    }
+  }, [lightbox]);
+
   return (
     <section className="page">
       <h2 className="text-reveal"><span>Gallery</span></h2>
