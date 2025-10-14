@@ -462,6 +462,14 @@ html[data-theme="dark"] .close-x{ color: #000 }
   }
 }
 
+/* Mobile: in dark mode make the hamburger Menu button use the accent gradient to match primary CTAs */
+html[data-theme="dark"] .hamburger .btn {
+  background: linear-gradient(90deg, #ff6fa3 0%, #b072ff 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 30px rgba(176,114,255,0.12);
+}
+
 /* form */
 .form{display:grid;gap:10px}
 .input, textarea{padding:12px;border-radius:12px;border:1px solid var(--glass-border);background:transparent;color:var(--text);width:100%}
