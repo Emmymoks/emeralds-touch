@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import Header from './components/Header';
-import Home from './pages/Home';
-import Gallery from './pages/Gallery';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import Loader from './components/Loader';
+
+// Lazy-loaded pages
+const Home = lazy(() => import('./pages/Home'));
+const Gallery = lazy(() => import('./pages/Gallery'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 export default function App() {
   const [route, setRoute] = useState('home');
@@ -13,10 +16,12 @@ export default function App() {
       <Header onNavigate={setRoute} route={route} />
 
       <main className="page-frame">
-        {route === 'home' && <Home onNavigate={setRoute} />} {/* ✅ Pass onNavigate */}
-        {route === 'gallery' && <Gallery />}
-        {route === 'about' && <About />}
-        {route === 'contact' && <Contact />}
+        <Suspense fallback={<Loader />}>
+          {route === 'home' && <Home onNavigate={setRoute} />}
+          {route === 'gallery' && <Gallery />}
+          {route === 'about' && <About />}
+          {route === 'contact' && <Contact />}
+        </Suspense>
       </main>
 
       <footer className="site-footer">
