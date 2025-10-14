@@ -366,6 +366,31 @@ html[data-theme="dark"] .category-btn.ghost {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
 }
 
+/* Mute/unmute overlay button positioned over videos. Visible on mobile and desktop. */
+.mute-toggle {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 3010; /* above the lightbox but below any global overlays */
+  background: rgba(255,255,255,0.92);
+  color: var(--text);
+  border: none;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform .12s ease, background .12s ease;
+}
+.mute-toggle:hover{ transform: translateY(-2px) }
+
+/* Dark mode variant for the small pill button */
+html[data-theme="dark"] .mute-toggle{ background: rgba(255,255,255,0.12); color: #fff }
+
+
 /* Mobile adjustments: use most of viewport but keep some breathing room */
 @media(max-width:520px){
   .lightbox-content{ max-width: 96vw; max-height: calc(100vh - 48px); border-radius:10px }
