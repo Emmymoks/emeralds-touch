@@ -2,8 +2,8 @@ import React from 'react';
 
 const sampleImages = [
   'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_8174_iu7ynv.jpg',
-    'https://ik.imagekit.io/emmycloud/image%20(8).jpg?updatedAt=1760363051310',
-    'https://ik.imagekit.io/emmycloud/IMG_8186.JPG?updatedAt=1760361485015'
+    'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_8136_gpktfd.jpg',
+    'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_8172_l5irh4.jpg'
 ];
 
 export default function Home({ onNavigate }) {
