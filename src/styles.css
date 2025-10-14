@@ -44,6 +44,12 @@ html,body,#root{height:100%;margin:0;background:var(--bg);color:var(--text)}
   padding:28px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,250,250,0.9));border:1px solid var(--glass-border);display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:center;overflow:hidden;
   animation: floatIn 700ms cubic-bezier(.2,.9,.3,1) both;
 }
+
+.hero-left{min-width:0}
+.hero-right{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+
+.hero-left h2{font-size:32px;margin:0 0 8px;line-height:1.05}
+.hero-left p{margin:0;color:var(--muted);max-width:62ch}
 @keyframes floatIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .hero-left h2{font-size:32px;margin:0 0 8px;line-height:1.05}
 .motto{color:var(--muted);margin-bottom:14px}
@@ -97,6 +103,7 @@ html,body,#root{height:100%;margin:0;background:var(--bg);color:var(--text)}
 
 /* small row of sample thumbs in Home */
 .thumb-row{display:flex;gap:8px}
+.thumb-row{display:flex;gap:8px;flex-wrap:wrap}
 .thumb-sample{
   width:84px;
   height:84px;
@@ -104,6 +111,22 @@ html,body,#root{height:100%;margin:0;background:var(--bg);color:var(--text)}
   border-radius:10px;
   display:block;transition:transform .25s ease}
 .thumb-sample:hover{transform:scale(1.04)}
+
+/* Ensure images inside cards scale and don't overflow */
+.card img{max-width:100%;height:auto;display:block;border-radius:8px}
+
+/* responsive tweaks for hero and cards */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:14px;padding:18px}
+  .hero-right{align-items:stretch}
+  .hero-media-card{width:100%;height:220px}
+}
+
+@media(max-width:520px){
+  .hero-left h2{font-size:24px}
+  .hero-media-card{height:180px}
+  .thumb-sample{width:66px;height:66px}
+}
 
 /* ---- LIGHTBOX FIX ---- */
 .lightbox {
