@@ -81,7 +81,7 @@ export default function Header({ onNavigate, route }) {
                 <FaInstagram size={22} color="#E1306C" />
               </a>
               <a href="https://www.tiktok.com/@emeraldoflagos?_t=ZS-90WAgFJQmLy&_r=1" target="_blank" rel="noreferrer">
-                <FaTiktok size={22} color="#fff" />
+                <FaTiktok size={22} color="#000000ff" />
               </a>
             </div>
           </div>
