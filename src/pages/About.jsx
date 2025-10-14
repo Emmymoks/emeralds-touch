@@ -34,7 +34,7 @@ export default function About() {
           </p>
           <p>
             I'm committed to serving clients in Lagos and Kwara State. Book a
-            consultation and let's bring your vision to life — one face, one
+            consultation and let's bring your vision to life. One face, one
             glam at a time ✨
           </p>
         </div>
