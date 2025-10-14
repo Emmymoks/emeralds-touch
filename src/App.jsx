@@ -1,6 +1,7 @@
 import React, { useState, Suspense, lazy } from 'react';
 import Header from './components/Header';
 import Loader from './components/Loader';
+import ThemeToggle from './components/ThemeToggle';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
@@ -14,6 +15,8 @@ export default function App() {
   return (
     <div className="app">
       <Header onNavigate={setRoute} route={route} />
+
+      <ThemeToggle />
 
       <main className="page-frame">
         <Suspense fallback={<Loader />}>
