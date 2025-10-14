@@ -21,7 +21,7 @@ export default function App() {
 
       <footer className="site-footer">
         <div>
-          © {new Date().getFullYear()} Emerald's Touch — one face, one glam at a time ✨
+          © 2025 Emerald's Touch
         </div>
       </footer>
     </div>
