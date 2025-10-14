@@ -104,6 +104,15 @@ html[data-theme="dark"] .input, html[data-theme="dark"] textarea{
   border: 1px solid rgba(255,255,255,0.04);
 }
 
+/* Contact page: make the WhatsApp submit button prominent in dark mode */
+html[data-theme="dark"] .contact-actions .btn[type="submit"],
+html[data-theme="dark"] .contact-left .btn[type="submit"] {
+  background: linear-gradient(90deg, #ff6fa3 0%, #b072ff 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 14px 40px rgba(176,114,255,0.18);
+}
+
 html[data-theme="dark"] .site-footer{ color: var(--muted); border-top-color: rgba(255,255,255,0.02) }
 
 html[data-theme="dark"] .mobile-menu{ background: rgba(8,11,14,0.92); border-color: rgba(255,255,255,0.03) }
