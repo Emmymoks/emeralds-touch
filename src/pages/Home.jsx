@@ -1,90 +1,179 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const sampleImages = [
-  'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_8174_iu7ynv.jpg',
+const IMAGES = {
+  Soft: [
+    'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_8174_iu7ynv.jpg',
     'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_8136_gpktfd.jpg',
     'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_8172_l5irh4.jpg'
-];
+  ],
+  Classic: [
+    'https://ik.imagekit.io/emmycloud/14.16.33_115d77fe.jpg?updatedAt=1760361484552',
+    'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_9407_mw1tzw.jpg',
+    'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_9409_l6ccv6.jpg',
+    'https://res.cloudinary.com/emmys-cloud/image/upload/14.16.33_0bd6c221_sebfqn.jpg'
+  ],
+  Bridal: [
+    'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_9398_qumdnj.jpg',
+    'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_9405_fsp3fx.jpg',
+    'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_9400_a750p1.jpg'
+  ]
+};
 
-export default function Home({ onNavigate }) {
+const VIDEOS = {
+  Soft: [
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9386_bzgxhb.mp4',
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9182_tv9wom.mp4',
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9390_dbrl0l.mp4'
+  ],
+  Classic: [
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_6429_rc3vxr.mp4',
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_8233_xsitdm.mov',
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9385_jf6mhg.mp4'
+  ],
+  Bridal: [
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9181_zzoiyl.mp4',
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_9179_uvpp4l.mp4',
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_4049_a6cu7l.mov',
+    'https://res.cloudinary.com/emmys-cloud/video/upload/IMG_6427_bsodfy.mp4'
+  ]
+};
+
+export default function Gallery() {
+  const [mode, setMode] = useState('Images'); // Images | Videos
+  const [category, setCategory] = useState('Soft');
+  const [lightbox, setLightbox] = useState(null); // {type:'img'|'vid', src}
+  const items = mode === 'Images' ? IMAGES[category] : VIDEOS[category];
+
+  // close lightbox on ESC
+  useEffect(() => {
+    function onKey(e) {
+      if (e.key === 'Escape') setLightbox(null);
+    }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  // lock body scroll when lightbox is open
+  useEffect(() => {
+    if (lightbox) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => { document.body.style.overflow = prev };
+    }
+  }, [lightbox]);
+
   return (
-    <section className="page" style={{ textDecoration: 'none' }}>
-      <div className="hero">
-        <div className="hero-left">
-          <h2 className="text-reveal"><span>Emerald's Touch</span></h2>
-          <h2 className="text-reveal"><span>Professional Makeup</span></h2>
-          <div className="motto">one face, one glam at a time ✨</div>
-          <p style={{ color: 'var(--muted)' }}>
-            Flawless Soft, Classic and Bridal looks. From day glam to camera-ready bridal
-            transformations, we craft looks that last.
-          </p>
+    <section className="page">
+      <h2 className="text-reveal"><span>Gallery</span></h2>
 
-          {/* Updated CTA buttons with hover animations */}
-          <div className="cta" style={{ marginTop: 16, display: 'flex', gap: 12 }}>
-            <button
-              className="btn animated-btn"
-              onClick={() => onNavigate('gallery')}
-              style={{ textDecoration: 'none' }}
-            >
-              View My Work
-            </button>
-
-            <button
-              className="btn ghost animated-btn"
-              onClick={() => onNavigate('contact')}
-              style={{ textDecoration: 'none' }}
-            >
-              Make a Reservation
-            </button>
-          </div>
+      <div className="filter-bar" aria-label="Gallery controls">
+        <div style={{ display: 'flex', gap: 8 }}>
+          <button
+            className={`btn ${mode === 'Images' ? '' : 'ghost'}`}
+            onClick={() => setMode('Images')}
+            aria-pressed={mode === 'Images'}
+          >
+            Images
+          </button>
+          <button
+            className={`btn ${mode === 'Videos' ? '' : 'ghost'}`}
+            onClick={() => setMode('Videos')}
+            aria-pressed={mode === 'Videos'}
+          >
+            Videos
+          </button>
         </div>
 
-        <div className="hero-right">
-          <div className="hero-media-card">
-            <video
-              className="hero-media"
-              src="https://res.cloudinary.com/emmys-cloud/video/upload/IMG_6429_rc3vxr.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            />
-          </div>
-
-          <div className="card" style={{ marginTop: 12 }}>
-            <div className="thumb-row">
-              {sampleImages.map((src) => (
-                <img key={src} className="thumb-sample" src={src} alt="thumb" loading="lazy" />
-              ))}
-            </div>
-          </div>
+        <div style={{ marginLeft: 'auto', display: 'flex', gap: 8 }}>
+          {['Soft', 'Classic', 'Bridal'].map((c) => (
+            <button
+              key={c}
+              className={`${category === c ? 'btn' : 'btn ghost'} category-btn`}
+              onClick={() => setCategory(c)}
+              aria-pressed={category === c}
+            >
+              {c}
+            </button>
+          ))}
         </div>
       </div>
 
-      <section style={{ marginTop: 26 }}>
-        <h3 className="text-reveal"><span>What clients say</span></h3>
-        <div className="reviews">
-          <div className="review">
-            <strong>Amaka A.</strong>
-            <div style={{ color: 'var(--muted)' }}>
-              Joy transformed me for my wedding. It lasted all day and the photos were stunning.
-            </div>
+      <div className="gallery-grid" role="list">
+        {items.map((src) => (
+          <div
+            className="thumb"
+            key={src}
+            role="listitem"
+            onClick={() => setLightbox({ src, type: mode === 'Images' ? 'img' : 'vid' })}
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') setLightbox({ src, type: mode === 'Images' ? 'img' : 'vid' });
+            }}
+            aria-label={`Open ${mode === 'Images' ? 'image' : 'video'} in ${category}`}
+          >
+            {mode === 'Images' ? (
+              <img className="thumb-media" src={src} alt={`${category} makeup`} loading="lazy" />
+            ) : (
+              <video
+                className="thumb-media"
+                src={src}
+                muted
+                loop
+                autoPlay
+                playsInline
+                preload="metadata"
+              />
+            )}
           </div>
-          <div className="review">
-            <strong>Chinelo O.</strong>
-            <div style={{ color: 'var(--muted)' }}>
-              Professional, punctual and so creative. Soft glam that still looks natural.
+        ))}
+      </div>
+
+      {lightbox && (
+        <div
+          className="lightbox"
+          onClick={() => setLightbox(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <div className="lightbox-header">
+              <div style={{ fontWeight: 700 }}>
+                {category} • {mode}
+              </div>
+              <button
+                className="close-x"
+                aria-label="Close"
+                onClick={() => setLightbox(null)}
+              >
+                ✕
+              </button>
             </div>
-          </div>
-          <div className="review">
-            <strong>Funmi P.</strong>
-            <div style={{ color: 'var(--muted)' }}>
-              Loved my classic look for a photoshoot. Highly recommend!
+
+            <div className="lightbox-body">
+              <div className="lightbox-media-wrapper">
+                {lightbox.type === 'img' ? (
+                  <img
+                    className="lightbox-media"
+                    src={lightbox.src}
+                    alt={`${category} open`}
+                  />
+                ) : (
+                  <video
+                    className="lightbox-media"
+                    src={lightbox.src}
+                    controls
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                  />
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      )}
     </section>
   );
 }
