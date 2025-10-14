@@ -2,14 +2,15 @@ import React from "react";
 
 export default function About() {
   return (
-    <section className="about-section">
-      <h2>About Emerald's Touch</h2>
+    <section className="about-section page">
+      <h2 className="text-reveal"><span>About Emerald's Touch</span></h2>
       <div className="about-grid">
         <div className="about-image-wrapper">
           <img
             src="https://ik.imagekit.io/emmycloud/Thank%20you%20Jesus!!__+1___happybirthday%20_happybirthdaytome%20_pretty%20_explore%20_explorepage%20_cute.jpg?updatedAt=1760364409453"
             alt="Founder"
             className="about-image"
+            loading="lazy"
           />
         </div>
 
