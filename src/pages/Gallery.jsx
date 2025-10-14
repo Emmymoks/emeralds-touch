@@ -10,7 +10,7 @@ const IMAGES = {
     'https://ik.imagekit.io/emmycloud/14.16.33_115d77fe.jpg?updatedAt=1760361484552',
     'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_9407_mw1tzw.jpg',
     'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_9409_l6ccv6.jpg',
-    'https://ik.imagekit.io/emmycloud/14.16.33_0bd6c221.jpg?updatedAt=1760361484058'
+    'https://res.cloudinary.com/emmys-cloud/image/upload/14.16.33_0bd6c221_sebfqn.jpg'
   ],
   Bridal: [
     'https://res.cloudinary.com/emmys-cloud/image/upload/IMG_9398_qumdnj.jpg',
