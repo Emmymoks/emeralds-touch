@@ -8,11 +8,11 @@ const sampleImages = [
 
 export default function Home({ onNavigate }) {
   return (
-    <section style={{ textDecoration: 'none' }}>
+    <section className="page" style={{ textDecoration: 'none' }}>
       <div className="hero">
         <div className="hero-left">
-          <h2>Emerald's Touch</h2>
-          <h2>Professional Makeup</h2>
+          <h2 className="text-reveal"><span>Emerald's Touch</span></h2>
+          <h2 className="text-reveal"><span>Professional Makeup</span></h2>
           <div className="motto">one face, one glam at a time ✨</div>
           <p style={{ color: 'var(--muted)' }}>
             Flawless Soft, Classic and Bridal looks. From day glam to camera-ready bridal
@@ -48,13 +48,14 @@ export default function Home({ onNavigate }) {
               muted
               loop
               playsInline
+              preload="metadata"
             />
           </div>
 
           <div className="card" style={{ marginTop: 12 }}>
             <div className="thumb-row">
               {sampleImages.map((src) => (
-                <img key={src} className="thumb-sample" src={src} alt="thumb" />
+                <img key={src} className="thumb-sample" src={src} alt="thumb" loading="lazy" />
               ))}
             </div>
           </div>
@@ -62,7 +63,7 @@ export default function Home({ onNavigate }) {
       </div>
 
       <section style={{ marginTop: 26 }}>
-        <h3>What clients say</h3>
+        <h3 className="text-reveal"><span>What clients say</span></h3>
         <div className="reviews">
           <div className="review">
             <strong>Amaka A.</strong>
