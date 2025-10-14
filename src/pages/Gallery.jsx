@@ -42,6 +42,7 @@ export default function Gallery() {
   const [mode, setMode] = useState('Images'); // Images | Videos
   const [category, setCategory] = useState('Soft');
   const [lightbox, setLightbox] = useState(null); // {type:'img'|'vid', src}
+  const [muted, setMuted] = useState(true);
   const items = mode === 'Images' ? IMAGES[category] : VIDEOS[category];
 
   // close lightbox on ESC
@@ -104,10 +105,10 @@ export default function Gallery() {
             className="thumb"
             key={src}
             role="listitem"
-            onClick={() => setLightbox({ src, type: mode === 'Images' ? 'img' : 'vid' })}
+            onClick={() => { setMuted(true); setLightbox({ src, type: mode === 'Images' ? 'img' : 'vid' }) }}
             tabIndex={0}
             onKeyDown={(e) => {
-              if (e.key === 'Enter') setLightbox({ src, type: mode === 'Images' ? 'img' : 'vid' });
+              if (e.key === 'Enter') { setMuted(true); setLightbox({ src, type: mode === 'Images' ? 'img' : 'vid' }); }
             }}
             aria-label={`Open ${mode === 'Images' ? 'image' : 'video'} in ${category}`}
           >
@@ -159,16 +160,27 @@ export default function Gallery() {
                   />
                 ) : (
                   <video
-                    className="lightbox-media"
-                    src={lightbox.src}
-                    controls
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
+                      className="lightbox-media"
+                      src={lightbox.src}
+                      controls
+                      autoPlay
+                      muted={muted}
+                      loop
+                      playsInline
+                      preload="auto"
                   />
                 )}
+                  {/* mute toggle overlay for mobile / easy access */}
+                  {lightbox.type === 'vid' && (
+                    <button
+                      className="mute-toggle"
+                      onClick={() => setMuted((m) => !m)}
+                      aria-pressed={!muted}
+                      aria-label={muted ? 'Unmute video' : 'Mute video'}
+                    >
+                      {muted ? '🔇' : '🔊'}
+                    </button>
+                  )}
               </div>
             </div>
           </div>
