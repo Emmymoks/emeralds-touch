@@ -31,7 +31,7 @@ export default function Header({ onNavigate, route }) {
         ))}
 
         {/* Social Links */}
-        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+        <div className="nav-socials">
           <a href="https://wa.me/2349060758511" target="_blank" rel="noreferrer">
             <FaWhatsapp size={20} color="#25D366" />
           </a>
@@ -39,7 +39,7 @@ export default function Header({ onNavigate, route }) {
             <FaInstagram size={20} color="#E1306C" />
           </a>
           <a href="https://www.tiktok.com/@emeraldoflagos?_t=ZS-90WAgFJQmLy&_r=1" target="_blank" rel="noreferrer">
-            <FaTiktok size={20} color="#fff" />
+            <FaTiktok size={20} color="#000" />
           </a>
         </div>
       </nav>
