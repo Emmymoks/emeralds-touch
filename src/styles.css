@@ -309,14 +309,16 @@ html[data-theme="dark"] .category-btn.ghost {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  /* Raise above most UI chrome (theme toggle/header) so media is never obscured */
+  z-index: 3000;
   padding: 20px;
 }
 
 .lightbox-content {
   position: relative;
-  max-width: 95vw;
-  max-height: 95vh;
+  /* Constrain content to viewport while leaving space for header/controls */
+  max-width: min(1300px, 96vw);
+  max-height: calc(100vh - 80px);
   border-radius: 12px;
   overflow: hidden;
   background: var(--card);
@@ -350,11 +352,13 @@ html[data-theme="dark"] .category-btn.ghost {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 8px;
 }
 
 .lightbox-media {
-  max-width: 90vw;
-  max-height: 80vh;
+  /* Ensure media fits inside the lightbox content without cropping. */
+  max-width: min(1200px, 92vw);
+  max-height: calc(100vh - 160px);
   width: auto;
   height: auto;
   object-fit: contain;
@@ -362,25 +366,34 @@ html[data-theme="dark"] .category-btn.ghost {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
 }
 
+/* Mobile adjustments: use most of viewport but keep some breathing room */
+@media(max-width:520px){
+  .lightbox-content{ max-width: 96vw; max-height: calc(100vh - 48px); border-radius:10px }
+  .lightbox-media{ max-width: 94vw; max-height: calc(100vh - 120px) }
+}
+
 /* Close button */
 .close-x {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
   background: rgba(255,255,255,0.9);
   border: none;
   color: var(--text);
-  font-size: 18px;
+  font-size: 14px; /* smaller X */
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
+  width: 28px; /* smaller circle */
+  height: 28px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition:transform .18s ease, background .18s ease;
+  transition: transform .14s ease, background .14s ease;
 }
 .close-x:hover{transform:scale(1.06)}
+
+/* Dark-mode: make the X black for better contrast on dark backdrops */
+html[data-theme="dark"] .close-x{ color: #000 }
 
 /* responsive */
 @media(max-width:900px){
