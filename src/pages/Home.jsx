@@ -39,7 +39,7 @@ export default function Home({ onNavigate }) {
           </div>
         </div>
 
-        <div>
+        <div className="hero-right">
           <div className="hero-media-card">
             <video
               className="hero-media"
