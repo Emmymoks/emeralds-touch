@@ -170,17 +170,6 @@ export default function Gallery() {
                       preload="auto"
                   />
                 )}
-                  {/* mute toggle overlay for mobile / easy access */}
-                  {lightbox.type === 'vid' && (
-                    <button
-                      className="mute-toggle"
-                      onClick={() => setMuted((m) => !m)}
-                      aria-pressed={!muted}
-                      aria-label={muted ? 'Unmute video' : 'Mute video'}
-                    >
-                      {muted ? '🔇' : '🔊'}
-                    </button>
-                  )}
               </div>
             </div>
           </div>
