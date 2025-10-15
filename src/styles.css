@@ -316,10 +316,9 @@ html[data-theme="dark"] .category-btn.ghost {
 
 .lightbox-content {
   position: relative;
-  /* Constrain content to viewport while leaving space for header/controls. 
-     Use a slightly smaller cap so the lightbox always fits comfortably on small/large screens. */
-  max-width: min(1200px, 96vw);
-  max-height: calc(100vh - 64px);
+  /* Constrain content to viewport while leaving space for header/controls */
+  max-width: min(1300px, 96vw);
+  max-height: calc(100vh - 80px);
   border-radius: 12px;
   overflow: hidden;
   background: var(--card);
@@ -339,13 +338,12 @@ html[data-theme="dark"] .category-btn.ghost {
 }
 
 .lightbox-body {
-  flex: 1 1 auto;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
-  /* keep a small inner padding so media doesn't touch rounded corners */
-  padding: 12px;
+  overflow: hidden;
 }
 
 .lightbox-media-wrapper {
@@ -354,36 +352,26 @@ html[data-theme="dark"] .category-btn.ghost {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Make wrapper the sizing context for the media so we can use 100% constraints */
-  max-width: 100%;
-  max-height: 100%;
-  box-sizing: border-box;
+  padding: 8px;
 }
 
+
 .lightbox-media {
-  /* Fit media fully inside the wrapper without cropping. The media will scale down as needed
-     to ensure the entire image/video is visible within the lightbox area. */
-  max-width: 100%;
-  max-height: 100%;
+  /* Ensure media fits inside the lightbox content without cropping. */
+  max-width: min(1200px, 92vw);
+  max-height: calc(100vh - 160px);
   width: auto;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
-  display: block;
 }
-
-
-/* Dark mode variant for the small pill button */
-html[data-theme="dark"] .mute-toggle{ background: rgba(255,255,255,0.12); color: #fff }
 
 
 /* Mobile adjustments: use most of viewport but keep some breathing room */
 @media(max-width:520px){
-  /* Mobile: use almost full viewport but keep breathing room for system UI / status bars */
-  .lightbox-content{ max-width: 98vw; max-height: calc(100vh - 32px); border-radius:10px }
-  .lightbox-body{ padding: 8px }
-  .lightbox-media{ max-width: 100%; max-height: calc(100vh - 120px) }
+  .lightbox-content{ max-width: 96vw; max-height: calc(100vh - 48px); border-radius:10px }
+  .lightbox-media{ max-width: 94vw; max-height: calc(100vh - 120px) }
 }
 
 /* Close button */
@@ -508,6 +496,93 @@ html[data-theme="dark"] .hamburger .btn {
 /* ABOUT PAGE */
 .about-section h2 {
   margin-bottom: 18px;
+}
+
+/* ------------------------------------------------------------------
+   Tablet & Mobile: override lightbox styles so small screens use the
+   provided compact lightbox layout while desktop keeps the original.
+   This entire block only applies when viewport <= 1024px. */
+@media (max-width: 1024px) {
+
+  /* ---- LIGHTBOX FIX (mobile/tablet) ---- */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(26,14,18,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Raise above most UI chrome (theme toggle/header) so media is never obscured */
+    z-index: 3000;
+    padding: 20px;
+  }
+
+  .lightbox-content {
+    position: relative;
+    /* Constrain content to viewport while leaving space for header/controls. */
+    max-width: min(1200px, 96vw);
+    max-height: calc(100vh - 64px);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--glass-border);
+  }
+
+  .lightbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .lightbox-body {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    /* keep a small inner padding so media doesn't touch rounded corners */
+    padding: 12px;
+  }
+
+  .lightbox-media-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Make wrapper the sizing context for the media so we can use 100% constraints */
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+  }
+
+  .lightbox-media {
+    /* Fit media fully inside the wrapper without cropping. The media will scale down as needed
+       to ensure the entire image/video is visible within the lightbox area. */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+    display: block;
+  }
+
+  /* Mobile adjustments: use most of viewport but keep some breathing room */
+  @media(max-width:520px){
+    /* Mobile: use almost full viewport but keep breathing room for system UI / status bars */
+    .lightbox-content{ max-width: 98vw; max-height: calc(100vh - 32px); border-radius:10px }
+    .lightbox-body{ padding: 8px }
+    .lightbox-media{ max-width: 100%; max-height: calc(100vh - 120px) }
+  }
+
 }
 
 .about-grid {
